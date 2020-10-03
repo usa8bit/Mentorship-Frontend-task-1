@@ -1,155 +1,171 @@
-html, body {
-    margin: 0;
+/* Lebih baik gunakan ini utk reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
-    padding: 40px;
-    background-color: #674baf;
-    color: white;
-    background-image: url(images/bg-mobile.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    line-height: 1.4;
-    font-family: "Open Sans", sans-serif;
-    font-size: 19px;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #674baf;
+  color: white;
+  background-image: url(images/bg-mobile.svg);
+  /* Saat responsive, background size kecil */
+  background-size: auto;
+  background-repeat: no-repeat;
+  /* Kalau background size cover. Tidak perlu background position */
+  line-height: 1.4;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
 }
 
 header {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-a, a:hover {
-    text-decoration: none;
+a,
+a:hover {
+  text-decoration: none;
 }
 
 header img {
-    width: 120px;
+  width: 120px;
 }
 
 main {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .image img {
-    width: 100%;
+  width: 100%;
 }
 
 .text {
-    line-height: 1.75;
-    text-align: center;
+  line-height: 1.75;
+  text-align: center;
 }
 
 h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+/* Font size pada responsive jga diperhatikan */
+p {
+  /* Perhatikan jarak antar element */
+  margin-top: 30px;
+  font-size: 16px;
 }
 
 a.cta {
-    display: inline-block;
-    position: relative;
-    background-color: white;
-    color: #674baf ;
-    line-height: 1;
-    margin-top: 26px;
-    width: 210px;
-    text-align: center;
-    padding: 20px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 10px #3d2c68;
-    transform: translateX(0px);
+  display: inline-block;
+  position: relative;
+  background-color: white;
+  color: #674baf;
+  line-height: 1;
+  margin-top: 26px;
+  width: 210px;
+  text-align: center;
+  /* Lebih presisi 18px dan tdk perlu padding left & right */
+  padding: 18px 0px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px #3d2c68;
+  transform: translateX(0px);
+  font-size: 16px;
 }
 
 a.cta:hover {
-    transform: translateX(3px);
-    transition-property: transform, transform;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out, ease-in-out;
-    transition-delay: 0s, 0s;
+  transform: translateX(3px);
+  transition-property: transform, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out, ease-in-out;
+  transition-delay: 0s, 0s;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    margin-left: 15px;
-    padding-left: 1px;
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+  padding-left: 1px;
 }
 
 footer > a {
-    transform: translateX(0px);
-    margin-right: 16px;
-    transition-property: transform, transform;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out, ease-in-out;
-    transition-delay: 0s, 0s;
+  transform: translateX(0px);
+  margin-right: 16px;
+  transition-property: transform, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out, ease-in-out;
+  transition-delay: 0s, 0s;
 }
 
 footer > a:hover {
-    transform: translateX(-3px);
+  transform: translateX(-3px);
 }
 
 footer i.fab:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 footer i.fab {
-    display: flex;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid white;
-    color: white;
-    height: 46px;
-    width: 46px;
+  display: flex;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  height: 46px;
+  width: 46px;
 }
 
 /* -----Media Query----- */
 @media (max-width: 1023px) {
-    .image {
-        margin-bottom: 70px;
-    }
+  .image {
+    margin-bottom: 70px;
+  }
 }
 
 @media (min-width: 1024px) {
-    body {
-        background-image: url(images/bg-desktop.svg);
-        padding: 30px 80px 30px 80px;
-        max-height: 100vh;
-    }
+  body {
+    background-image: url(images/bg-desktop.svg);
+    /* Saat desktop full */
+    background-size: cover;
+    padding: 30px 80px 30px 80px;
+    /* Kalau tujuannya spya fullscreen jgn max, tapi langsung definisi height agar tdk mengecil saat content dikit */
+    height: 100vh;
+  }
 
-    header {
-        margin-bottom: 40px;
-    }
+  header {
+    margin-bottom: 40px;
+  }
 
-    header img {
-        width: 200px;
-    }
+  header img {
+    width: 200px;
+  }
 
-    main {
-        margin-bottom: 20px;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
-    }
+  main {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
 
-    .text {
-        padding-left: 60px;
-        text-align: left;
-    }
+  .text {
+    padding-left: 60px;
+    text-align: left;
+  }
 
-    h1 {
-        font-size: 32px;
-        line-height: 1.3;
-    }
+  h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
 
-    a.cta {
-        width: 160px;
-    }
+  a.cta {
+    width: 160px;
+  }
 
-    footer {
-        justify-content: flex-end;
-    }
+  footer {
+    justify-content: flex-end;
+  }
 }
